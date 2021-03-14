@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Minder</title>
+    <link rel="shortcut icon" href="images/favicon.ico">   
+    <link rel="stylesheet" href="css/home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&family=Ubuntu&display=swap" rel="stylesheet">
+    <script src="https://use.fontawesome.com/3fa36ae73c.js"></script>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.0/animate.min.css"
+  />
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <%- include("partials/header"); -%>
+
+    
+    <div class="container master  home-card">
+      
+        <a href="/">
+          <button class="button downvote button-top">
+              <i class="fa fa-times fa-2x"></i>
+          </button>
+        </a>
+    
+      <div class="movie-card  animate__animated animate__fadeIn">
+        <img src="<%= movie.image %> " alt="movie">
+        <div class="text">
+          
+        
+          <h5><b><%= movie.Title %></b> </h5>
+          <p class="marker"> <i class="fa fa-imdb" aria-hidden="true"></i> <%= movie.imdb %> /10</p>
+            <p class="marker"><i class="fa fa-calendar" aria-hidden="true"></i> <%= movie.release_year %> </p>
+          <p class="marker"> <i class="fa fa-film" aria-hidden="true"></i> <%= movie.genre %> </p>
+          <p class="marker"> <i class="fa fa-clock-o" aria-hidden="true"></i> <%= movie.duration %>  </p>
+            <p class="marker"> <i class="fa fa-globe" aria-hidden="true"></i> <%= movie.country %> </p>
+          <hr>
+          <p><%= movie.description %> </p>
+        </div>
+        
+      </div>
+      <form action="/" method="post">
+        <input type="hidden" value="<%= movie.image %>" name="image">
+        <input type="hidden" name="title" value="<%= movie.Title %>">
+        <input type="hidden" name="rating" value="<%= movie.imdb %>">
+        <input type="hidden" name="release_year" value="<%= movie.release_year %>">
+        <input type="hidden" name="genre" value="<%= movie.genre %>">
+        <input type="hidden" name="duration" value="<%= movie.duration %>">
+        <input type="hidden" name="country" value="<%= movie.country %>">
+        <input type="hidden" name="description" value="<%= movie.description %>">
+      
+          <button type="submit" class="button heart button-top">
+            <i class="fa fa-heart fa-2x"></i>
+          </button>
+      
+    </form>
+    </div>
+<div class="container">
+      <a href="/">
+        <button class="button downvote button-down">
+            <i class="fa fa-times fa-2x"></i>
+        </button>
+      </a>
+
+        <button class="button watch animate__animated animate__fadeIn" onclick="window.open('https://www.google.co.in/search?q=<%= movie.Title %>+movie', '_blank')"target='0'>
+          Watch Now!
+          <i class="fa fa-star"></i>
+        </button>
+    
+      <button type="submit" class="button heart button-down">
+        <i class="fa fa-heart fa-2x"></i>
+      </button>
+</div>
+  </body>
+<script>
+  $('.heart').click(function (e) {
+    $('.movie-card').removeClass('animate__fadeIn');
+      $('.movie-card').addClass('animate__fadeOutRight');
+      $('.watch').removeClass('animate__fadeIn');
+      $('.watch').addClass('animate__fadeOut');
+    });
+    $('.downvote').click(function (e) {
+      $('.movie-card').removeClass('animate__fadeIn');
+      $('.movie-card').addClass('animate__fadeOutLeft');
+      $('.watch').removeClass('animate__fadeIn');
+      $('.watch').addClass('animate__fadeOut');
+    });
+</script>
+</html>
+<%- include("partials/footer"); -%>

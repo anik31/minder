@@ -1,0 +1,43 @@
+
+    
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Minder | Liked</title>
+    <link rel="shortcut icon" href="images/favicon.ico">   
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&family=Ubuntu&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/liked.css">
+    <script src="https://use.fontawesome.com/3fa36ae73c.js"></script>
+  </head>
+  <body>
+    <%- include("partials/header"); -%>
+    <% movie.forEach(function(movie){   %>
+    <div class="container master">
+          <div class="movie-card">
+        <img src="<%= movie.image %> " alt="movie">
+        <div class="text">
+          <h5><b><%= movie.title %> </b></h5>
+          <p class="marker"> <i class="fa fa-imdb" aria-hidden="true"></i> <%= movie.rating %> /10</p>
+            <p class="marker"><i class="fa fa-calendar" aria-hidden="true"></i> <%= movie.release_year %> </p>
+          <p class="marker"> <i class="fa fa-film" aria-hidden="true"></i> <%= movie.genre %> </p>
+          <p class="marker"> <i class="fa fa-clock-o" aria-hidden="true"></i> <%= movie.duration %>  </p>
+            <p class="marker"> <i class="fa fa-globe" aria-hidden="true"></i> <%= movie.country %> </p>
+          <hr>
+          <p><%= movie.description %> </p>
+        </div>
+        <div class="container">
+          <div>            
+            <button class="button watch" onclick="window.open('https://www.google.co.in/search?q=<%= movie.title %>+movie', '_blank')"target='0'>
+              Watch Now!
+              <i class="fa fa-star"></i>
+            </button>            
+          </div>
+        </div>
+      </div>     
+    </div>
+    <%   })   %>
+  </body>
+</html>
+
+<%- include("partials/footer"); -%>

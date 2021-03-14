@@ -1,0 +1,20 @@
+footer {
+  font-family: "Montserrat";
+  color: gray;
+}
+.gitlink:hover {
+  text-decoration: none;
+  color: #ff6c80;
+}
+.gitlink {
+  color: gray;
+}
+footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 50px;
+  width: 100%;
+  overflow: hidden;
+}

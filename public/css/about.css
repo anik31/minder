@@ -1,0 +1,39 @@
+p {
+  font-size: 18px;
+  line-height: 40px;
+  text-align: center;
+  font-family: "Montserrat";
+}
+
+h1 {
+  text-align: center;
+  font-family: "Montserrat";
+}
+
+body {
+  font-family: "Montserrat";
+  background: linear-gradient(90deg, #ff4c68, #ffcccc, #ff4c68);
+}
+.about {
+  margin-top: 50px;
+}
+/* Works on Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #ff4c68 #ffcccc;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #ffcccc;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #ff4c68;
+  border-radius: 20px;
+  border: 3px solid #ffcccc;
+}

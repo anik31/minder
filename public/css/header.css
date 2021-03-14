@@ -1,0 +1,20 @@
+body {
+  font-family: "Montserrat";
+}
+
+.logo {
+  background-color: #0d122b;
+  padding: 10px;
+  color: white;
+}
+nav {
+  background: linear-gradient(90deg, #ff4c68, #ffcccc, #ff4c68);
+}
+header {
+  position: sticky;
+  top: 0;
+  font-family: "Montserrat";
+}
+.navbar-brand {
+  font-weight: 900;
+}
