@@ -19,6 +19,6 @@
     "express": "^4.17.1",
     "fs": "0.0.1-security",
     "mongoose": "^5.11.15",
-    "node-fetch": "^2.6.1"
+    "node-fetch": "^2.6.7"
   }
 }
